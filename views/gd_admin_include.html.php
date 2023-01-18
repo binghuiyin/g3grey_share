@@ -135,7 +135,7 @@ endif;
 <div id="gd-admin-header">
   <div id="gd-admin-title"><?php echo t($admin_info->name) ?> - <?php echo $version ?></div>
   <div id="gd-admin-hlinks">
-    <ul style="float: right;"><li><a href="http://blog.dragonsoft.us/gallery-3/" target="_blank"><?php echo t("Home") ?></a>&nbsp;|&nbsp;</li>
+    <ul style="float: right;"><li><a href="https://www.yinfor.com/gallery-3-g3grey-theme/" target="_blank"><?php echo t("Home") ?></a>&nbsp;|&nbsp;</li>
       <?php if (isset($admin_info->discuss_url)): ?>
       <li><a href="<?php echo $admin_info->discuss_url;  ?>" target="_blank"><?php echo t("Support") ?></a>&nbsp;|&nbsp;</li>
       <?php endif; ?>
@@ -145,8 +145,8 @@ endif;
       <?php if (isset($admin_info->vote)): ?>
 	      <li><a href="<?php echo $admin_info->vote;     ?>" target="_blank"><?php echo t("Vote") ?></a>&nbsp;|&nbsp;</li>
       <?php endif; ?>
-      <li><a href="http://twitter.com/greydragon_th" target="_blank" title="<?php echo t("Follow Us on Twitter") ?>"><?php echo t("Follow Us") ?></a>&nbsp;|&nbsp;</li>
-      <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9MWBSVJMWMJEU" target="_blank" ><?php echo t("Coffee Fund") ?></a>&nbsp;|&nbsp;</li>
+      <li><a href="https://twitter.com/binghuiyin" target="_blank" title="<?php echo t("Follow Us on Twitter") ?>"><?php echo t("Follow Us") ?></a>&nbsp;|&nbsp;</li>
+      <li><a href="https://paypal.me/g2soft" target="_blank" ><?php echo t("Tea Fund") ?></a>&nbsp;|&nbsp;</li>
       <li><a href="#" class="g-link-autoupdate" <?php echo (isCurlInstalled())? null : "disabled=\"disabled\""; ?> ><?php echo t("Auto Update"); ?></a></li>
     </ul>
   </div>
