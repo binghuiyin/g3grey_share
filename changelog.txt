@@ -1,4 +1,7 @@
-GreyDragon Shared Module Changelog
+G3Grey Shared Module Changelog
+
+Version 2.0:
+-- Change the module for G3Grey theme
 
 version 1.3:
 - Added check to detect situation when CURL is not installed to disable Auto Update feature

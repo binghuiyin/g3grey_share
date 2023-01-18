@@ -1,8 +1,11 @@
 <?php defined("SYSPATH") or die("No direct script access.");
 /**
+ * G3Grey Theme - a custom theme based on Grey Dragon Theme
+ * This theme is designed and modified by David Yin, https://www.yinfor.com
  * Grey Dragon Theme - a custom theme for Gallery 3
  * This theme was designed and built by Serguei Dosyukov, whose blog you will find at http://blog.dragonsoft.us
  * Copyright (C) 2012 Serguei Dosyukov
+ * Copyright (C) 2023 David Yin
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation; either version 2 of the License, or (at your
@@ -17,7 +20,7 @@
  */
 ?>
 <style>   
-  @import "<?= url::file("modules/greydragon/css/gd_common.css"); ?>";
+  @import "<?php echo url::file("modules/g3grey_share/css/gd_common.css"); ?>";
 </style>
 
 <script>
@@ -52,7 +55,7 @@
   });
 </script>
 
-<?
+<?php
 
 function isCurlInstalled() {
 	if (in_array('curl', get_loaded_extensions())) {
@@ -108,7 +111,7 @@ else:
 endif;
 
 if (isCurlInstalled() && ($checkInDays > 0) && ((time() - $lastupdate) > ($checkInDays * 24 * 60 * 60))): // Check version every N days
-  $admin_info2 = new ArrayObject(parse_ini_file(MODPATH   . "greydragon/module.info"), ArrayObject::ARRAY_AS_PROPS);
+  $admin_info2 = new ArrayObject(parse_ini_file(MODPATH   . "g3grey_share/module.info"), ArrayObject::ARRAY_AS_PROPS);
   $version2 = number_format($admin_info2->version / 10, 1, '.', '');
   
   $versionCheck  = checkVersionInfo($downloadid, $version);
@@ -128,53 +131,53 @@ endif;
 ?>
 
 <div id="gd-admin-header">
-  <div id="gd-admin-title"><?= t($admin_info->name) ?> - <?= $version ?></div>
+  <div id="gd-admin-title"><?php echo t($admin_info->name) ?> - <?php echo $version ?></div>
   <div id="gd-admin-hlinks">
-    <ul style="float: right;"><li><a href="http://blog.dragonsoft.us/gallery-3/" target="_blank"><?= t("Home") ?></a>&nbsp;|&nbsp;</li>
-      <? if (isset($admin_info->discuss_url)): ?>
-      <li><a href="<?= $admin_info->discuss_url;  ?>" target="_blank"><?= t("Support") ?></a>&nbsp;|&nbsp;</li>
-      <? endif; ?>
-      <? if (isset($admin_info->info_url)): ?>
-	      <li><a href="<?= $admin_info->info_url; ?>" target="_blank"><?= t("Download") ?></a>&nbsp;|&nbsp;</li>
-      <? endif; ?>
-      <? if (isset($admin_info->vote)): ?>
-	      <li><a href="<?= $admin_info->vote;     ?>" target="_blank"><?= t("Vote") ?></a>&nbsp;|&nbsp;</li>
-      <? endif; ?>
-      <li><a href="http://twitter.com/greydragon_th" target="_blank" title="<?= t("Follow Us on Twitter") ?>"><?= t("Follow Us") ?></a>&nbsp;|&nbsp;</li>
-      <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9MWBSVJMWMJEU" target="_blank" ><?= t("Coffee Fund") ?></a>&nbsp;|&nbsp;</li>
-      <li><a href="#" class="g-link-autoupdate" <?= (isCurlInstalled())? null : "disabled=\"disabled\""; ?> ><?= t("Auto Update"); ?></a></li>
+    <ul style="float: right;"><li><a href="http://blog.dragonsoft.us/gallery-3/" target="_blank"><?php echo t("Home") ?></a>&nbsp;|&nbsp;</li>
+      <?php if (isset($admin_info->discuss_url)): ?>
+      <li><a href="<?php echo $admin_info->discuss_url;  ?>" target="_blank"><?php echo t("Support") ?></a>&nbsp;|&nbsp;</li>
+      <?php endif; ?>
+      <?php if (isset($admin_info->info_url)): ?>
+	      <li><a href="<?php echo $admin_info->info_url; ?>" target="_blank"><?php echo t("Download") ?></a>&nbsp;|&nbsp;</li>
+      <?php endif; ?>
+      <?php if (isset($admin_info->vote)): ?>
+	      <li><a href="<?php echo $admin_info->vote;     ?>" target="_blank"><?php echo t("Vote") ?></a>&nbsp;|&nbsp;</li>
+      <?php endif; ?>
+      <li><a href="http://twitter.com/greydragon_th" target="_blank" title="<?php echo t("Follow Us on Twitter") ?>"><?php echo t("Follow Us") ?></a>&nbsp;|&nbsp;</li>
+      <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9MWBSVJMWMJEU" target="_blank" ><?php echo t("Coffee Fund") ?></a>&nbsp;|&nbsp;</li>
+      <li><a href="#" class="g-link-autoupdate" <?php echo (isCurlInstalled())? null : "disabled=\"disabled\""; ?> ><?php echo t("Auto Update"); ?></a></li>
     </ul>
   </div>
 </div>
 <div id="g-autoupdate-config">
-  <ul><li><?= t("Check every"); ?>&nbsp;&nbsp;</li>
+  <ul><li><?php echo t("Check every"); ?>&nbsp;&nbsp;</li>
     <li><input id="g-auto-delay-edit" type="text" size="2" value="30"></li>
     <li><?=t("days (set to 0 to disable)"); ?></li>
-<? if (($versionCheck == 0) && ($versionCheck2 == 0)): ?>
-    <li>&nbsp;&nbsp;|&nbsp;&nbsp;<?= t("Last check:"); ?>&nbsp;<?= date("Y-m-d H:i:s", $lastupdate); ?></li>
-<? endif; ?>  
+<?php if (($versionCheck == 0) && ($versionCheck2 == 0)): ?>
+    <li>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo t("Last check:"); ?>&nbsp;<?php echo date("Y-m-d H:i:s", $lastupdate); ?></li>
+<?php endif; ?>  
   </ul>
 </div>
 
-<? if ($versionCheck == -1): ?>
-  <div id="gd-admin-version"><?= t("Version check is incomplete. No version information has been found."); ?> <?= $versionCheck; ?> : <?= $downloadid; ?></div>
-<? elseif ($versionCheck == 0): ?>
-<? else: ?>
-  <div id="gd-admin-version"><?= t("Newer version") ?> <?= $versionCheck; ?> <?= t("is available. Click Download link for more info.") ?></div>
-<? endif; ?>
-<? if (($versionCheck2 == -1) || ($versionCheck2 == 0)): ?>
-<? else: ?>
-  <div id="gd-admin-version-2"><?= t("Newer version") ?> <?= $versionCheck2; ?> <?= t("of GreyDragon Shared Module is available. Click") . ' <a href="http://codex.gallery2.org/Gallery3:Modules:greydragon" target="_blank">' . t("here") . '</a> ' . t("for more info.") ?></div>
-<? endif; ?>
+<?php if ($versionCheck == -1): ?>
+  <div id="gd-admin-version"><?php echo t("Version check is incomplete. No version information has been found."); ?> <?php echo $versionCheck; ?> : <?php echo $downloadid; ?></div>
+<?php elseif ($versionCheck == 0): ?>
+<?php else: ?>
+  <div id="gd-admin-version"><?php echo t("Newer version") ?> <?php echo $versionCheck; ?> <?php echo t("is available. Click Download link for more info.") ?></div>
+<?php endif; ?>
+<?php if (($versionCheck2 == -1) || ($versionCheck2 == 0)): ?>
+<?php else: ?>
+  <div id="gd-admin-version-2"><?php echo t("Newer version") ?> <?php echo $versionCheck2; ?> <?php echo t("of GreyDragon Shared Module is available. Click") . ' <a href="http://codex.gallery2.org/Gallery3:Modules:greydragon" target="_blank">' . t("here") . '</a> ' . t("for more info.") ?></div>
+<?php endif; ?>
 <div id="g-admin-container">
-<? if (isset($help)): ?>
+<?php if (isset($help)): ?>
 	<div class="column1">
-	  <?= $form ?>
+	  <?php echo $form ?>
 	</div>
 	<div class="column2">
-    <?= $help ?>
+    <?php echo $help ?>
 	</div>
-<? else: ?>
-  <?= $form ?>
-<? endif; ?>
+<?php else: ?>
+  <?php echo $form ?>
+<?php endif; ?>
 </div>
