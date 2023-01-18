@@ -1,0 +1,59 @@
+/**
+ * Gallery 3 Grey Dragon Common Module
+ * Copyright (C) 2012 Serguei Dosyukov
+ *
+ * CSS rules for admin section
+ */
+
+body { min-width: 1200px; }
+
+#g-content { font-size: 1em; margin-bottom: 0; width: auto; padding-left: 1em; padding-right: 1em; }
+#g-content ul { margin-bottom: 0; }
+
+#g-content h3 { color: #d54e21; border-bottom: #a2bdbf 1px solid; margin-top: 0.3em; margin-bottom: 0.3em; }
+#g-content p  { color: #333; }
+#g-content table { margin-bottom: 0; }
+
+#g-content input     { display: inline; float: left; margin-right: 0.8em; color: #555555; border: 1px solid #ccc; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+#g-content textarea  { height: 6em; color: #555555; border: 1px solid #ccc; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+#g-content select    { display: inline; float: left; margin-right: 0.8em; width: 50.6%; color: #555555; border: 1px solid #ccc; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+#g-content input[type='checkbox'] { border: none; }
+#g-content input[type='text'] { width: 50%; }
+
+#g-content input.submit { display: inline-block; min-width: 100px; padding: 4px 10px 4px; font-size: 13px; line-height: 18px; color:#333333; text-align: center; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); background-color: #fafafa; background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6); background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6); background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6); background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6); background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6); background-repeat: no-repeat; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0); border: 1px solid #ccc; border-bottom-color: #bbb; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+#g-content input.submit:first-child { *margin-left: 0; }
+#g-content input.submit:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+
+#g-content input.g-error   { padding-left: 30px; border: none; }
+#g-content input.g-success { background-color: transparent; }
+#g-content input.g-warning { background-color: transparent; border: none; }
+
+#g-content p.g-error       { padding-left: 30px; border: none; margin-bottom: 0; background-image: none; }
+
+#gd-admin-header { padding: 7px 0; margin: 4px 0 0 0; background-color: #fbfbfb; background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5); background-image:- ms-linear-gradient(top, #ffffff, #f5f5f5); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f5f5f5)); background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5); background-image: -o-linear-gradient(top, #ffffff, #f5f5f5); background-image: linear-gradient(top, #ffffff, #f5f5f5); background-repeat: repeat-x; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0); border: 1px solid #ddd; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: inset 0 1px 0 #ffffff; -moz-box-shadow: inset 0 1px 0 #ffffff; box-shadow: inset 0 1px 0 #ffffff; display: inline-block;  width: 100%; }
+#gd-admin-header .divider{padding:0 5px;color:#999999;}
+#gd-admin-header .active a{color:#333333;}
+
+#gd-admin-version, 
+#gd-admin-version-2 { margin-top: 4px; padding: 7px 14px; background-color: rgb(217, 237, 247); border: 1px solid #bce8f1; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: inset 0 1px 0 #ffffff; -moz-box-shadow: inset 0 1px 0 #ffffff; box-shadow: inset 0 1px 0 #ffffff; }
+
+#gd-admin-title     { float: left; padding-left: 10px; color: #333v42; font-weight: bold; font-size: 1.4em; text-shadow: #deeefa 0 1px 0; display: inline-block; }
+#gd-admin-hlinks    { float: right; padding-right: 10px; }
+#gd-admin-hlinks li { list-style-type: none; float: left; color: #618299; display: inline; text-shadow: 0 1px 0 #ffffff; }
+#gd-admin-hlinks a  { line-height: 1.6em; }
+#gd-admin-hlinks a[disabled="disabled"], #gd-admin-hlinks a[disabled="disabled"]:hover { text-decoration: none; cursor: default; }
+
+#g-autoupdate-config { display: none; border: 1px solid #ddd; border-top: none; width: 45%; height: 2.5em; margin-left: 54%; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: inset 0 1px 0 #ffffff; -moz-box-shadow: inset 0 1px 0 #ffffff; box-shadow: inset 0 1px 0 #ffffff; }
+#g-autoupdate-config.visible { min-height: 30px; display: inline-block;  }
+#g-autoupdate-config ul { float: right; margin: 6px 10px;}
+#g-autoupdate-config li { float: left; display: inline; line-height: 1.5em; }
+
+#g-admin-container          { margin-top: 14px; font-size: 0.9em; line-height: 1.6em; }
+#g-admin-container .column1 { float: left; width: 53%; min-width: 610px; }
+#g-admin-container .column2 { float: right; width: 46%; min-width: 529px; }
+
+#g-admin-container fieldset { position: relative; border-top-left-radius: 0.4em; border-top-right-radius: 0.4em; overflow: hidden; }
+#g-admin-container legend   { position: absolute; left: 0; width: 100%; padding: 0.4em 0.8em; background: url(../images/blue-grad.png) #d5e6f2 repeat-x left top; border-bottom: #dfdfdf 1px solid;  }
+#g-admin-container fieldset ul { margin-top: 34px; }
+

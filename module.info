@@ -1,0 +1,9 @@
+name        = "GreyDragon Shared"
+description = "Shared content for modules from GreyDragon. Need to be activated.<br />Version 1.3 | By <a href=http://blog.dragonsoft.us>Serguei Dosyukov</a>"
+version     = 13
+author_name = "Serguei Dosyukov"
+author_url  = "http://blog.dragonsoft.us/gallery-3/"
+info_url    = ""
+discuss_url = ""
+
+
